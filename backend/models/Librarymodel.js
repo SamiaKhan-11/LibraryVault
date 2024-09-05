@@ -1,14 +1,17 @@
-const { Schema, model} = require('../connection');
+const { Schema, model } = require('../connection');
 
 const MySchema = new Schema({
-    name:String,
-    description:String,
-    version:String,
-    package_name:String,
-    downloads:String,
-    updated:String,
-    tags:String,
-    createdAt: { type:Date, default: Date.now}
+    category: String,
+    name: String,
+    version: String,
+    package_name: String,
+    tags: String,
+    description: String,
+    downloads: String,
+    updated: String,
+    link: String,
+    language: { type: String },
+    createdAt: { type: Date, default: Date.now }
 })
 
-module.exports = model( 'library', MySchema);
+module.exports = model('library', MySchema);

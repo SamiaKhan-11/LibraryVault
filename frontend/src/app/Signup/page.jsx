@@ -58,33 +58,37 @@ const SignUp = () => {
     validationSchema: SignupSchema
   });
   return (
-    <div className=''>
-      <div className="font-[sans-serif]  md:h-screen p-8 max-w-[60%] mx-auto">
-        <div className="grid md:grid-cols-3  items-center shadow-[0_10px_20px_-2px_black] rounded-xl overflow-hidden mt-8 ">
-          <div className="max-md:order-2 flex flex-col justify-center space-y-16 max-md:mt-16 min-h-full bg-gradient-to-tr from-gray-900 to-gray-700 lg:px-8 px-4 py-4 ">
-            <div>
-              <h4 className="text-white text-lg font-semibold">
+    <div className="bg-gradient-to-tr from-gray-700 via-blue-200 to-gray-800">
+      <div className="font-[sans-serif]  md:h-screen p-8 max-w-[70%] mx-auto">
+        <div className="grid md:grid-cols-4  items-center shadow-[0_10px_20px_-2px_black] rounded-xl overflow-hidden mt-20 ">
+          <div className="max-md:order-2 flex flex-col justify-center space-y-16 max-md:mt-16 min-h-full lg:px-8 px-4 py-4 bg-left md:col-span-2">
+            <div className='' >
+              <h4 className="text-white text-2xl font-semibold">
                 Create Your Account
               </h4>
-              <p className="text-[13px] text-gray-300 mt-3 leading-relaxed">
+              <p className="text-[13px] text-white mt-3 leading-relaxed">
                 Welcome to our registration page! Get started by creating your
                 account.
               </p>
             </div>
             <div>
-              <h4 className="text-white text-lg font-semibold">
+              <h4 className="text-white text-2xl font-semibold">
                 Simple &amp; Secure Registration
               </h4>
-              <p className="text-[13px] text-gray-300 mt-3 leading-relaxed">
+              <p className="text-[13px] text-white mt-3 leading-relaxed">
                 Our registration process is designed to be straightforward and secure.
                 We prioritize your privacy and data security.
               </p>
             </div>
           </div>
           <form onSubmit={signupForm.handleSubmit} className="md:col-span-2 w-full py-6 px-6 sm:px-16
-    bg-gradient-to-tr from-amber-50 shadow-2xl shadow-inner ">
+    bg-white shadow-2xl shadow-inner ">
             <div className="mb-4">
-              <h3 className="text-gray-800 text-3xl font-bold underline underline-offset-8 ">Sign Up</h3>
+              <h3 className="text-3xl font-bold underline underline-offset-4 text-black  ">
+                <span className='bg-clip-text bg-gradient-to-tr from-gray-800 via-blue-100 to-gray-900 text-transparent'>
+                Sign Up
+                </span>
+                </h3>
             </div>
             <div className="space-y-4">
               <div>
@@ -207,7 +211,7 @@ const SignUp = () => {
                     type="password"
                     id='confirmpassword'
                     onChange={signupForm.handleChange}
-                    value={signupForm.values.confirmpassworrd}
+                    value={signupForm.values.confirmpassword}
                     required=""
                     className="text-gray-800 bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded-md outline-blue-500"
                     placeholder="Confirm Password"
@@ -220,34 +224,29 @@ const SignUp = () => {
                   )
                 }
               </div>
-              <div className="flex items-center">
-                <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  className="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                />
-                <label
-                  htmlFor="remember-me"
-                  className="ml-3 block text-sm text-gray-800"
-                >
-                  I accept the{" "}
-                  <a
-                    href="javascript:void(0);"
-                    className="text-blue-600 font-semibold hover:underline ml-1"
-                  >
-                    Terms and Conditions
-                  </a>
-                </label>
-              </div>
+             
             </div>
             <div className="!mt-6">
               <button
                 type="submit"
                 disabled={signupForm.isSubmitting}
-                className="w-full py-3 px-4 tracking-wider text-sm rounded-md text-white bg-gray-700 hover:bg-gray-800 focus:outline-none"
+                className="group flex items-center justify-center rounded-md bg-gradient-to-tr from-gray-700 via-blue-100 to-gray-800 px-5 py-3 text-black transition focus:outline-none focus:ring focus:ring-indigo-200 w-full"
               >
                 Create an account
+                <svg
+                  className="group-hover:translate-x-2 ml-3 h-5 w-5 transition-all"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
               </button>
             </div>
             <p className="text-gray-800 text-sm mt-5 text-center">

@@ -8,7 +8,7 @@
 
 const express = require('express');
 const UserRouter = require('./router/UserRouter')
-
+const LibraryRouter = require('./router/LibraryRouter')
 const cors = require('cors')
 
 //Initializing express
@@ -24,7 +24,7 @@ app.use( cors ({
 app.use(express.json());
 
 app.use('/user', UserRouter);
-
+app.use('/library', LibraryRouter);
 
 
 
