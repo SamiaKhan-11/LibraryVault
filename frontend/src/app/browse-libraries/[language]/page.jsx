@@ -6,7 +6,8 @@ import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { useParams } from 'next/navigation';
 
 // Define categories for filtering libraries
-const categories = [
+const languageCategories = {
+react:[
   'Styling',
   'UI',
   'State Management',
@@ -15,7 +16,30 @@ const categories = [
   'Forms',
   'Utilities',
   'Testing',
-];
+],
+python:[
+  'Data Analytics',
+  'Machine Learning',
+  'Data Visualization',
+  'Scripting',
+  'Graphics',
+  'Utilities',
+],
+javascript:[
+  'Styling',
+  'UI',
+  'State Management',
+  'Data Fetching',
+  'Utilities',
+  'Testing',
+],
+java:[
+  'Database Management',
+  'Testing',
+  'Build Tools',
+  'Libraries',
+],
+};
 
 const BrowseLibraries = () => {
   const runOnce = useRef(false);
@@ -157,7 +181,7 @@ const BrowseLibraries = () => {
           />
         </div>
         <div className="flex flex-wrap gap-4 justify-center">
-          {categories.map((category) => (
+          {languageCategories[language].map((category) => (
             <button
               key={category}
               className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition"

@@ -50,143 +50,107 @@ const Login = () => {
     },
     validationSchema: LoginSchema
   });
+
+
   return (
-    <div className='bg-gradient-to-tr from-gray-700 via-blue-200 to-gray-800 '>
+    <div className='h-screen bg-gradient-to-l from-blue-50 to-blue-100 flex items-center justify-center'>
+      <div className="relative flex w-96 flex-col rounded-xl bg-white text-gray-700 shadow-md">
+        <div>
+          <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center rounded-xl bg-gradient-to-tr from-blue-500 to-cyan-300 text-white shadow-lg shadow-blue-500/40">
+            <h3 className="block font-sans text-3xl font-semibold leading-snug text-white underline underline-offset-4">
+              Sign In
+            </h3>
+          </div>
+          <form action="" onSubmit={LoginForm.handleSubmit} className='space-y-5'>
+            <div className="flex flex-col gap-4 p-6">
+              <div>
+                <div className="relative mt-2 w-full">
+                  <input
+                    type="text"
+                    id="email"
+                    onChange={LoginForm.handleChange}
+                    value={LoginForm.values.email}
+                    className="border-2 peer block w-full appearance-none rounded-lg border border-blue-400 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 hover:border-cyan-200 focus:border-cyan-500 focus:outline-none focus:ring-0"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="email"
+                    className="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300"
+                  >
+                    {" "}
+                    Enter Your Email{" "}
+                  </label>
+                </div>
+                {LoginForm.touched.email && (
+                  <p className='text-xs text-red-300 mt-2'>{LoginForm.errors.email}</p>
+                )
 
-      <section className='overflow-hidden h-screen'>
-        <div className="px-8 py-28 mx-auto md:px-12 lg:px-32 max-w-7xl">
-          <div className="grid items-center py-8 gap-12 lg:grid-cols-2 lg:gap-24 bg-no-repeat 
-          bg-white
-          rounded-3xl  shadow-[0_10px_20px_-2px_black] md:bg-left lg:bg-left sm:bg-left"
-            style={{ backgroundImage: "linear-gradient(0deg, #fffc, #fffc), url('/Lock2.jpg') " }}>
+                }
+              </div>
+              <div>
+                <div className="relative mt-2 w-full">
+                  <input
+                    type="password"
+                    id="password"
+                    onChange={LoginForm.handleChange}
+                    value={LoginForm.values.password}
+                    className="border-2 peer block w-full appearance-none rounded-lg border border-blue-400 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 hover:border-cyan-200 focus:border-cyan-500 focus:outline-none focus:ring-0"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="password"
+                    className="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300"
+                  >
+                    {" "}
+                    Enter Your Password
+                  </label>
+                </div>
+                {LoginForm.touched.password && (
+                  <p className='text-xs text-red-300 mt-2'>{LoginForm.errors.password} </p>
+                )}
+              </div>
 
-            {/* style={{ backgroundImage: "linear-gradient(0deg, #fffc, #fffc), url(' https://i.pinimg.com/736x/6d/2d/13/6d2d1301a2615992bfb52c3b383885dd.jpg'); " }} */}
-            <div className="flex flex-col p-16 md:text-left text-center">
-              <h1 className="text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
-                Welcome Back <br />
-              </h1>
-              <p className='mt-3 text-lg font-medium'>Sign in to your account</p>
-              <p className="mt-3 font-medium text-black">
-                Let's get started
+            </div>
+            <div className="p-5 pt-0">
+              <div className="">
+                <button className="group flex w-full mx-auto cursor-pointer select-none items-center justify-center rounded-lg px-6 py-2 bg-gradient-to-tr from-blue-600 to-cyan-300 text-xs font-bold uppercase text-white transition focus:outline-none focus:ring focus:ring-indigo-200 w-full shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/40">
+                  <a
+                    href="#"
+                    className="group flex w-fit items-center justify-center rounded py-1 text-center font-bold"
+                  >
+                    {" "}
+                    Sign In{" "}
+                  </a>
+                  <svg
+                    className="flex-0 group-hover:w-6 ml-4 h-6 w-0 transition-all"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </button>
+
+
+              </div>
+              <p className="mt-6 flex justify-center text-sm font-light text-inherit">
+                Don't have an account?
+                <Link className="ml-1 text-sm font-bold text-blue-500" href="/Signup">
+                  Sign up
+                </Link>
               </p>
             </div>
-            <div className="p-4 bg-white rounded-3xl">
-              <div className="p-6 rounded-2xl">
-                <div>
-                  <h1 className="font-bold text-3xl underline underline-offset-4 text-center text-black">
-                    <span className='bg-clip-text bg-gradient-to-tr from-gray-800 via-blue-100 to-gray-900 text-transparent'>Sign In</span>
-                  </h1>
-                  <div className="relative py-4">
-                    <div
-                      className="absolute inset-0 flex items-center"
-                      aria-hidden="true"
-                    >
-                      <div className="w-full border-t border-gray-400" />
-                    </div>
-                    <div className="relative flex justify-center">
-                      <span className="px-2 text-sm text-black bg-white py-2">
-
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <form onSubmit={LoginForm.handleSubmit} className='sm:w-full md:w-full lg:w-full' >
-                  <div className="space-y-4">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block mb-3 text-sm font-medium text-black"
-                      >
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        onChange={LoginForm.handleChange}
-                        value={LoginForm.values.email}
-                        placeholder="Email Address"
-                        className="block w-full h-12 px-4 py-2 text-blue-500 duration-200 border-2 border-blue-500  rounded-lg appearance-none bg-chalk hover:border-blue-200 placeholder-zinc-300 focus:border-cyan-500 focus:outline-none focus:ring-zinc-300 sm:text-sm"
-                        fdprocessedid="4tv9onj"
-                      />
-                      {
-                        LoginForm.touched.email && (
-                          <p className='text-xs text-red-300 mt-2'> {LoginForm.errors.email} </p>
-                        )
-                      }
-                    </div>
-                    <div className="col-span-full">
-                      <label
-                        htmlFor="password"
-                        className="block mb-3 text-sm font-medium text-black"
-                      >
-                        Password
-                      </label>
-                      <input
-                        id="password"
-                        onChange={LoginForm.handleChange}
-                        value={LoginForm.values.password}
-                        className="block w-full h-12 px-4 py-2 text-blue-500 duration-200 border-2 border-blue-500 rounded-lg appearance-none bg-chalk hover:border-blue-200 placeholder-zinc-300 focus:border-cyan-500 focus:outline-none focus:ring-zinc-300 sm:text-sm"
-                        placeholder="Type password here..."
-                        type="password"
-                        fdprocessedid="u32mrir"
-                      />{
-                        LoginForm.touched.password && (
-                          <p className='text-xs text-red-300 mt-2'> {LoginForm.errors.password} </p>
-                        )
-                      }
-                    </div>
-                    <div className="col-span-full">
-                      <button
-                        type="submit"
-                        className="group flex w-full cursor-pointer select-none items-center justify-center rounded-md bg-gradient-to-tr from-gray-700 via-blue-100 to-gray-800 px-6 py-2 text-black transition"
-                        fdprocessedid="evdvf6"
-                      >
-                        sign in
-
-                        <svg
-                          className="flex-0 group-hover:w-6 ml-4 h-6 w-0 transition-all"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div className="mt-6">
-                    <p className="flex mx-auto text-sm font-medium leading-tight text-center text-black">
-                      Don't have an account!
-                      <Link
-                        className="ml-auto text-blue-500 hover:text-black"
-                        href="Signup"
-                      >
-                        Sign up now
-                      </Link>
-                    </p>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+          </form>
         </div>
-      </section>
-
-
+      </div>
     </div>
   )
 }
 
 export default Login
-
-
-
-
-
-
