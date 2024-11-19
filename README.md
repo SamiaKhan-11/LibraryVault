@@ -1,6 +1,6 @@
 # My Summer Training Project for 2024
 
-                                                                                                   ## Library Vault
+## Library Vault
 
 ### Library Vault is your one-stop platform to find and share the most efficient and well-documented libraries for Python, React, JavaScript, and Java. Save time and improve your projects with curated libraries from our website.
 
