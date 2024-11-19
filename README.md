@@ -2,7 +2,7 @@
 
 ## Library Vault
 
-### Library Vault is your one-stop platform to find and share the most efficient and well-documented libraries for Python, React, JavaScript, and Java. Save time and improve your projects with curated libraries from our website.
+#### Library Vault is your one-stop platform for finding and sharing the most efficient and well-documented libraries for Python, React, JavaScript, and Java. With curated libraries from our website, you can save time and improve your projects.
 
 ### Project Features
 1. Curated collection
